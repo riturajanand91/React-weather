@@ -7,7 +7,6 @@ const App = () => {
   const [weatherInfo, setWeatherInfo] = useState('');
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(location);
     const weather = await fetchData(location);
     setWeatherInfo(weather);
   }
