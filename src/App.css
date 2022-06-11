@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
+ /* .weather-container {
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+ }
+ .weather-container {
+   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418)),
+      url("/public/weather-bg.jpg");
+   background-size: cover;
+   background-position: center;
+ } */
+/*******/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    position: relative;
+    height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418)),
+      url("/public/weather-bg.jpg");
+    /* background: linear-gradient(45deg, rgba(118, 83, 131, 0.45) 0%, rgba(118, 83, 131, 0.45) 12.5%,rgba(183, 152, 78, 0.45) 12.5%, rgba(183, 152, 78, 0.45) 25%,rgba(226, 198, 43, 0.45) 25%, rgba(226, 198, 43, 0.45) 37.5%,rgba(97, 60, 149, 0.45) 37.5%, rgba(97, 60, 149, 0.45) 50%,rgba(161, 129, 96, 0.45) 50%, rgba(161, 129, 96, 0.45) 62.5%,rgba(204, 175, 60, 0.45) 62.5%, rgba(204, 175, 60, 0.45) 75%,rgba(140, 106, 114, 0.45) 75%, rgba(140, 106, 114, 0.45) 87.5%,rgba(247, 221, 25, 0.45) 87.5%, rgba(247, 221, 25, 0.45) 100%),linear-gradient(135deg, rgb(38, 243, 105),rgb(56, 237, 253)); */
+    background-size: cover;
+    background-position: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.weather-container {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #fff;
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar {
+    padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#search-input {
+    padding: 5px 10px;
+    width: 70%;
+    font-size: 20px;
+    height: 50px;
+    color: rgb(226, 226, 226);
+    float: left;
+    display: block;
+    background: transparent;
+    border: 1px solid rgb(233, 233, 233);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#search-input:focus {
+    background: rgb(248, 248, 248);
+    color: rgb(17, 17, 17);
+}
+
+button {
+    width: 30%;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(15, 158, 134);;
+    color: #fff;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-content: center;
+}
+
+.btn-unit-change {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-top: 1px solid #fff;
+}
+
+button:hover {
+    background-color: rgb(94, 104, 102);
+}
+
+.output-panel {
+    padding: 10px;
+    width: 50%;
+    height: 180px;
+    float: left;
+    background-color: rgb(94, 104, 102);
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.temperature {
+    cursor: pointer;
+}
+
+.temperature-box {
+    width: 50%;
+    float: left;
+}
+
+.humidity,
+.temperature {
+    height: 60px;
+}
+
+.temperature,
+.city,
+.humidity,
+.min-max-temp {
+    margin: 20px 0;
+}
+
+#city-name{
+    text-transform: capitalize;
+}
+
+footer{
+    background: rgba(0,0,0,0.3);
+    width: 100%;
+    text-align: center;
+    color: #f8f8f8;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 20px 0;
+}
+
+@media only screen and (min-width: 480px) {
+
+    .weather-container {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    .weather-container {
+        width: 55%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .weather-container {
+        width: 45%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+
+    .weather-container {
+        width: 37%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .weather-container {
+        width: 32%;
+    }
 }
